@@ -1,11 +1,6 @@
 language: python
 python:
   - "3.5"
-env:
-  global:
-    - SECRET_KEY=slfn1#d%6cn2r1$7-=726k#(zszxy%3e30=(hvj83s%(e4)\#@%
-    - DEBUG=True
-    - ALLOWED_HOSTS=127.0.0.1, .localhost, .herokuapp.com
 install:
   - pip install -r requirements.txt
 script:
