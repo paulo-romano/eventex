@@ -19,20 +19,20 @@ pyenv update
 pyenv install 3.5.0
 pyenv global 3.5.0
 
-# Install Virtualenvwrapper plugin
-git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git ~/.pyenv/plugins/pyenv-virtualenvwrapper
-
 # iPython notebook
 pip install ipython[notebook]
 
-# Copy bash_aliases
-cp -p /vagrant_data/bash_aliases /home/vagrant/.bash_aliases
-
 # Virtualenv
 pip install virtualenv
-#mkdir /home/vagrant/shared/wttd
-#cd /home/vagrant/shared/wttd
-#virtualenv .wttd --always-copy -p `which python`
+
+# Install Virtualenvwrapper plugin
+git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git ~/.pyenv/plugins/pyenv-virtualenvwrapper
+
+# Copy bash_aliases
+cp -p /vagrant_data/bashrc /home/vagrant/.bashrc
+
+# Copy bash_aliases
+cp -p /vagrant_data/bash_aliases /home/vagrant/.bash_aliases
 
 # Heroku
 sudo apt-get -y install python-dev python-psycopg2 libpq-dev
