@@ -19,8 +19,12 @@ pyenv update
 pyenv install 3.5.0
 pyenv global 3.5.0
 
-# iPython notebook
+# IPython notebook
 pip install ipython[notebook]
+
+# IPython profile
+ipython profile create
+cp -p /vagrant_data/ipython_config.py /home/vagrant/.ipython/profile_default/ipython_config.py
 
 # Virtualenv
 pip install virtualenv
