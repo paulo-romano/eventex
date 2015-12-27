@@ -3,7 +3,7 @@ python:
   - "3.5"
 env:
   - DEBUG=True
-install:git
+install:
   - pip install -r requirements.txt
 script:
   - python manage.py check
