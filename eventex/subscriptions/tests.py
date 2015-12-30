@@ -36,4 +36,3 @@ class SubscribeTest(TestCase):
         self.assertSequenceEqual(['name', 'cpf', 'email', 'phone'], list(form.fields))
 
 
-
