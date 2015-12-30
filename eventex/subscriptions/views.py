@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from eventex.subscriptions.forms import SubscriptionForm
 
 
 def subscription(request):
-    return render(request, 'subscription_form.html')
+    context = {'form': SubscriptionForm()}
+    return render(request, 'subscription_form.html', context)
