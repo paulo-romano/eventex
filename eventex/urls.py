@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-import eventex.core.views
+from eventex.core.views import home
+from eventex.subscriptions.views import subscription
 
 urlpatterns = [
-    url(r'^$', eventex.core.views.home),
+    url(r'^$', home),
+    url(r'^inscricao/$', subscription),
     url(r'^admin/', admin.site.urls),
 ]
