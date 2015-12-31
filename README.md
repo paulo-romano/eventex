@@ -1,8 +1,12 @@
-[![Build Status](https://travis-ci.org/paulo-romano/eventex.svg?branch=master)](https://travis-ci.org/paulo-romano/eventex)
+
 # Eventex  
 Sistema de Eventos desenvolvido no curso Welcome to the Django
 
-Exemplo: eventex.
+[![Build Status](https://travis-ci.org/paulo-romano/eventex.svg?branch=master)](https://travis-ci.org/paulo-romano/eventex)
+
+
+Exemplo: http://eventex-pauloromano.herokuapp.com/
+
  
 ## Como desenvolver? 
 1. Clone o repositório; 
