@@ -1,0 +1,9 @@
+ALLOWED_HOSTS=127.0.0.1, .localhost
+DEBUG=True
+SECRET_KEY=TopSecretKey
+EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
+EMAIL_HOST=localhost
+EMAIL_PORT=25
+EMAIL_USE_TLS=False
+EMAIL_HOST_USER=''
+EMAIL_HOST_PASSWORD=''
