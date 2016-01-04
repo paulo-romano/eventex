@@ -2,7 +2,7 @@
 # Eventex  
 Sistema de Eventos desenvolvido no curso Welcome to the Django
 
-[![Build Status](https://travis-ci.org/paulo-romano/eventex.svg?branch=master)](https://travis-ci.org/paulo-romano/eventex)
+[![Build Status](https://travis-ci.org/paulo-romano/eventex.svg?branch=master)](https://travis-ci.org/paulo-romano/eventex)  [![Code Climate](https://codeclimate.com/github/paulo-romano/eventex/badges/gpa.svg)](https://codeclimate.com/github/paulo-romano/eventex)
 
 
 Exemplo: http://eventex-pauloromano.herokuapp.com/
