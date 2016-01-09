@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'eventex.core',
-    'eventex.subscriptions',
+    'eventex.subscriptions.app.SubscriptionsConfig',
     'test_without_migrations'
 ]
 
