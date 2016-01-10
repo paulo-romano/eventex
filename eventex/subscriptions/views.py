@@ -1,18 +1,18 @@
-from django.core.mail import send_mail
-from django.contrib import messages
-from django.http import Http404
-from django.shortcuts import render, redirect
-from django.template.loader import render_to_string
 from django.conf import settings
+from django.core.mail import send_mail
+from django.http import Http404
+from django.shortcuts import render, redirect, resolve_url
+from django.template.loader import render_to_string
+
 from eventex.subscriptions.forms import SubscriptionForm
 from eventex.subscriptions.models import Subscription
 
 
-def subscribe(request):
+def new(request):
     if request.method == 'POST':
         return create(request)
     else:
-        return new(request)
+        return empty_form(request)
 
 
 def detail(request, pk):
@@ -36,10 +36,10 @@ def create(request):
         _send_mail('Confirmação de Inscrição', settings.DEFAULT_FROM_EMAIL, subscription.email,
                    'subscription_email.txt', {'subscription': subscription})
 
-        return redirect('/inscricao/{0}/'.format(subscription.pk))
+        return redirect(resolve_url('subscriptions:detail', subscription.pk))
 
 
-def new(request):
+def empty_form(request):
     return render(request, 'subscription_form.html', {'form': SubscriptionForm()})
 
 
