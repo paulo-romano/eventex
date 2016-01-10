@@ -47,7 +47,7 @@
                     <ul>
                         <li><a data-scroll href="#overview">Conferência</a></li>
                         <li><a data-scroll href="#sponsors">Patrocinadores</a></li>
-                        <li><a data-scroll href="/inscricao/">Inscrição</a></li>
+                        <li><a data-scroll href="{% url 'subscriptions:new' %}">Inscrição</a></li>
                         <li><a data-scroll href="#venue">Local</a></li>
                     </ul>
                 </nav>
@@ -111,7 +111,7 @@
                 	<h2>Inscrição</h2>
                 	<h3>Inscrições em breve!</h3>
                     <p>Fique à vontade para entrar em contato com a gente.<br>Teremos prazer em responder quaisquer dúvidas.</p>
-                	<a class="btn-basic btn-blue" href="/inscricao/">Increva-se</a>
+                	<a class="btn-basic btn-blue" href="{% url 'subscriptions:new' %}">Increva-se</a>
                 </div>
             </div>
         </section>
