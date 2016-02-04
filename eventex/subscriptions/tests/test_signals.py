@@ -1,5 +1,6 @@
 from django.test import TestCase
 from django.core.signals import Signal
+from eventex.subscriptions.signals import subscription_created
 
 
 class SignalsTest(TestCase):
