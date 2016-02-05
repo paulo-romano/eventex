@@ -4,7 +4,6 @@ from django.shortcuts import render, redirect, resolve_url
 from eventex.subscriptions.forms import SubscriptionForm
 from eventex.subscriptions.models import Subscription
 from eventex.subscriptions.services import send_mail
-from eventex.subscriptions.signals import subscription_created
 
 
 def new(request):
@@ -34,8 +33,6 @@ def create(request):
 
         send_mail('Confirmação de Inscrição', settings.DEFAULT_FROM_EMAIL, subscription.email,
                    'subscription_email.txt', {'subscription': subscription})
-
-        subscription_created.send(sender=create, name=subscription.name)
 
         return redirect(resolve_url('subscriptions:detail', subscription.pk))
 
