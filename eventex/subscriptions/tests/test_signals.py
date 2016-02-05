@@ -4,6 +4,8 @@ from django.core.signals import Signal
 from eventex.subscriptions.signals import subscription_created
 from unittest.mock import Mock
 
+from eventex.subscriptions.views import create
+
 
 class SignalsTest(TestCase):
     def test_subscription_created_signal(self):
@@ -24,4 +26,4 @@ class SignalsTest(TestCase):
 
         response = self.client.post(resolve_url('subscriptions:new'), data)
 
-        mock.assert_called_once_with(None, data.get('name'))
+        mock.assert_called_with(name=data.get('name'), sender=create, signal=subscription_created)
