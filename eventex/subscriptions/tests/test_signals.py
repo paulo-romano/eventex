@@ -30,4 +30,4 @@ class SignalsTest(TestCase):
         mock.assert_called_with(name=self.data.get('name'), sender=create, signal=subscription_created)
 
     def make_subscription(self):
-        return self.client.post(resolve_url('subscriptions:new'), self.data)
+        self.client.post(resolve_url('subscriptions:new'), self.data)
