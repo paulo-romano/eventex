@@ -29,6 +29,8 @@ class SignalsTest(TestCase):
 
         mock.assert_called_with(name=self.data.get('name'), sender=create, signal=subscription_created)
 
+        subscription_created.disconnect(mock)
+
     def test_subscription_created_receivers(self):
         """Subscription created signal must have a receiver"""
         self.assertTrue(subscription_created.receivers)
