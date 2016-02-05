@@ -8,6 +8,10 @@ from eventex.subscriptions.views import create
 
 
 class SignalsTest(TestCase):
+    def setUp(self):
+        self.data = dict(name='Paulo Romano', cpf='12345678901',
+            email='pauloromanocarvalho@gmail.com', phone='11-55556666')
+
     def test_subscription_created_signal(self):
         """Must have a subscription created signal"""
         self.assertIsInstance(subscription_created, Signal)
@@ -21,9 +25,9 @@ class SignalsTest(TestCase):
         mock = Mock()
         subscription_created.connect(mock)
 
-        data = dict(name='Paulo Romano', cpf='12345678901',
-                    email='pauloromanocarvalho@gmail.com', phone='11-55556666')
+        self.make_subscription()
 
-        response = self.client.post(resolve_url('subscriptions:new'), data)
+        mock.assert_called_with(name=self.data.get('name'), sender=create, signal=subscription_created)
 
-        mock.assert_called_with(name=data.get('name'), sender=create, signal=subscription_created)
+    def make_subscription(self):
+        return self.client.post(resolve_url('subscriptions:new'), self.data)
