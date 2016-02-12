@@ -55,7 +55,7 @@ class SubscriptionsNewPostValid(TestCase):
 
     def test_send_subscribe_email(self):
         """E-Mail must be sended"""
-        self.assertEquals(1, len(mail.outbox))
+        self.assertGreater(len(mail.outbox), 0)
 
     def test_save_subscription(self):
         """Must save subscription data"""
